@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestion_Cine_DPS
 Desafio Practico 1 de la Materia Diseño y Programación de Software Multiplataforma
 
@@ -22,3 +23,6 @@ el proyecto ya esta desarrollado, testeado y comprobado.
 
 
 
+=======
+
+>>>>>>> a3264b0 (Administracion asientos)
