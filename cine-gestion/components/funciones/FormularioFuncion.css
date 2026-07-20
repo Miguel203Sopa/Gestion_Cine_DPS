@@ -1,0 +1,72 @@
+.contPrin{
+    width: 95%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(160deg, #1b1b1b 0%, #141414 100%);
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+.contPrin h2{
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.contGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.Continput{
+    width: 100%;
+    padding: 12px 14px;
+    background: #262626;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: white;
+    font-size: 14.5px;
+}
+
+.ContSelect{
+       width: 100%;
+    padding: 12px 14px;
+    background: #262626;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: white;
+    font-size: 14.5px;
+}
+
+.ContSelect option{
+     background: #262626;
+    color: white;
+}
+
+.Continput[type="date"]{
+    color-scheme: dark;
+}
+
+.Continput[type="time"]{
+    color-scheme: dark;
+}
+
+.contebtn{
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.contebtn:hover{
+    background: #ff2530;
+    transform: translateY(-2px);
+}
