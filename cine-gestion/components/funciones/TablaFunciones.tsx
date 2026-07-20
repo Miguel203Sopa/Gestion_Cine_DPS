@@ -5,6 +5,8 @@ import { useAppSelector } from "@/redux/hooks";
 
 import FuncionFila from "@/components/funciones/FuncionFila";
 
+import "./TablaFunciones.css"
+
 
 
 export default function TablaFunciones(){
@@ -18,15 +20,12 @@ export default function TablaFunciones(){
 
 
     return (
-
-        <>
-
-            <h2>
+        <div className="contTabla">
+              <h2>
                 Tabla de Funciones
             </h2>
-
-
-            <table>
+            <div className="conTfunciones">
+                 <table className="tablacont">
 
 
                 <thead>
@@ -73,10 +72,8 @@ export default function TablaFunciones(){
 
 
             </table>
-
-
-        </>
-
+            </div>
+        </div>
     );
 
 

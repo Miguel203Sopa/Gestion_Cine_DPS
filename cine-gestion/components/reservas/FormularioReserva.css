@@ -1,0 +1,108 @@
+
+.form-reserva-container{
+    width: 95%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(160deg, #1b1b1b 0%, #141414 100%);
+    border-radius: 15px;
+    font-family: sans-serif;
+}
+
+.form-reserva-container h2{
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+
+.form-reserva-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.form-label{
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+
+.form-input,
+.form-select{
+    width: 100%;
+    padding: 12px 14px;
+    background: #262626;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: white;
+    font-size: 14.5px;
+    outline: none;
+    transition: all .3s ease;
+}
+
+.form-input:focus,
+.form-select:focus{
+    border-color: #e50914;
+    background: #2c2c2c;
+}
+
+.form-select{
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23e50914' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+.form-select option{
+    background: #262626;
+    color: white;
+}
+
+
+.form-input[type="number"]{
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+.btn-guardar{
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-guardar:hover{
+    background: #ff2530;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(229,9,20,.4);
+}
+
+.btn-guardar:active{
+    transform: translateY(0);
+}
+

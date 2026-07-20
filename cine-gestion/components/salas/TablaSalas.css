@@ -1,0 +1,123 @@
+
+.tabla-salas-container{
+    width: 95%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(160deg, #1b1b1b 0%, #141414 100%);
+    border-radius: 15px;
+}
+
+.tabla-salas-container h2{
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+
+.tabla-salas-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #e50914 #1b1b1b;
+}
+
+.tabla-salas-wrapper::-webkit-scrollbar{
+    height: 8px;
+}
+
+.tabla-salas-wrapper::-webkit-scrollbar-track{
+    background: #1b1b1b;
+}
+
+.tabla-salas-wrapper::-webkit-scrollbar-thumb{
+    background: #e50914;
+    border-radius: 10px;
+}
+
+
+.tabla-salas{
+    width: 100%;
+    min-width: 750px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-salas thead{
+    background: linear-gradient(90deg, #e50914, #b0060f);
+}
+
+.tabla-salas th{
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tabla-salas th:first-child{
+    border-top-left-radius: 10px;
+}
+
+.tabla-salas th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.tabla-salas td{
+    padding: 14px;
+    text-align: center;
+    color: #e8e8e8;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+}
+
+.tabla-salas tbody tr{
+    background: #262626;
+    transition: all .25s ease;
+}
+
+.tabla-salas tbody tr:nth-child(even){
+    background: #1f1f1f;
+}
+
+.tabla-salas tbody tr:hover{
+    background: #3b3b3b;
+    box-shadow: inset 4px 0 0 #e50914;
+}
+
+.tabla-salas tbody tr:last-child td{
+    border-bottom: none;
+}
+
+.badge-butaca{
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-tradicionales{
+    background: rgba(76,175,80,.15);
+    color: #4ade80;
+    border: 1px solid rgba(76,175,80,.4);
+}
+
+.badge-exclusivas{
+    background: rgba(255,193,7,.15);
+    color: #ffc107;
+    border: 1px solid rgba(255,193,7,.4);
+}
+
+.badge-experiencia-4d{
+    background: rgba(229,9,20,.15);
+    color: #ff4d57;
+    border: 1px solid rgba(229,9,20,.4);
+}

@@ -8,9 +8,8 @@ import {
     updateSala,
     selectSala,
 } from "@/redux/slices/salasSlice";
-
-// Esta función la implementaremos después
 import { generarAsientos } from "@/helpers/generarAsientos";
+import "./FormularioSala.css";
 
 export const salaInicial: Sala = {
     id: "",
@@ -22,65 +21,43 @@ export const salaInicial: Sala = {
 };
 
 export default function FormularioSala() {
-
     const dispatch = useAppDispatch();
-
     const [error, setError] = useState("");
-
     const [sala, setSala] = useState<Sala>(salaInicial);
 
-    const salas = useAppSelector(
-        state => state.salas.salas
-    );
-
-    const salaSeleccionada = useAppSelector(
-        state => state.salas.salaSeleccionada
-    );
+    const salas = useAppSelector(state => state.salas.salas);
+    const salaSeleccionada = useAppSelector(state => state.salas.salaSeleccionada);
 
     useEffect(() => {
-
         if (salaSeleccionada) {
             // eslint-disable-next-line react-hooks/set-state-in-effect
             setSala(salaSeleccionada);
         }
-
     }, [salaSeleccionada]);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
-
         const { name, value } = e.target;
 
         if (e.target instanceof HTMLInputElement) {
-
             setSala({
                 ...sala,
-                [name]:
-                    e.target.type === "number"
-                        ? Number(value)
-                        : value,
+                [name]: e.target.type === "number" ? Number(value) : value,
             });
-
         } else {
-
             setSala({
                 ...sala,
                 [name]: value,
             });
-
         }
-
     };
 
     const guardarSala = () => {
-
         setError("");
 
         const existe = salas.some(
-            s =>
-                s.id === sala.id &&
-                s.id !== salaSeleccionada?.id
+            s => s.id === sala.id && s.id !== salaSeleccionada?.id
         );
 
         if (!sala.id.trim()) {
@@ -114,96 +91,80 @@ export default function FormularioSala() {
         }
 
         const asientos = salaSeleccionada &&
-    salaSeleccionada.filas === sala.filas &&
-    salaSeleccionada.columnas === sala.columnas
-        ? salaSeleccionada.asientos
-        : generarAsientos(
-            sala.filas,
-            sala.columnas
-        );
+            salaSeleccionada.filas === sala.filas &&
+            salaSeleccionada.columnas === sala.columnas
+            ? salaSeleccionada.asientos
+            : generarAsientos(sala.filas, sala.columnas);
 
         if (salaSeleccionada) {
-
-            dispatch(
-                updateSala({
-                    ...sala,
-                    asientos,
-                })
-            );
-
+            dispatch(updateSala({ ...sala, asientos }));
         } else {
-
-            dispatch(
-                addSala({
-                    ...sala,
-                    asientos,
-                })
-            );
-
+            dispatch(addSala({ ...sala, asientos }));
         }
 
         setSala(salaInicial);
-
         dispatch(selectSala(null));
-
     };
 
     return (
-        <>
+        <div className="form-sala-container">
+            <h2>Gestión de Salas</h2>
 
-            <input
-                type="text"
-                name="id"
-                placeholder="Id de la sala"
-                value={sala.id}
-                onChange={handleChange}
-            />
+            <div className="form-sala-grid">
+                <input
+                    className="form-input"
+                    type="text"
+                    name="id"
+                    placeholder="Id de la sala"
+                    value={sala.id}
+                    onChange={handleChange}
+                />
 
-            <input
-                type="text"
-                name="nombre"
-                placeholder="Nombre de la sala"
-                value={sala.nombre}
-                onChange={handleChange}
-            />
+                <input
+                    className="form-input"
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre de la sala"
+                    value={sala.nombre}
+                    onChange={handleChange}
+                />
 
-            <select
-                name="tipo_butacas"
-                value={sala.tipo_butacas}
-                onChange={handleChange}
-            >
-                <option value="">Seleccione un tipo de butaca</option>
-                <option value="Tradicionales">Tradicionales</option>
-                <option value="Exclusivas">Exclusivas</option>
-                <option value="Experiencia-4D">Experiencia 4D</option>
-            </select>
+                <select
+                    className="form-select"
+                    name="tipo_butacas"
+                    value={sala.tipo_butacas}
+                    onChange={handleChange}
+                >
+                    <option value="">Seleccione un tipo de butaca</option>
+                    <option value="Tradicionales">Tradicionales</option>
+                    <option value="Exclusivas">Exclusivas</option>
+                    <option value="Experiencia-4D">Experiencia 4D</option>
+                </select>
 
-            <input
-                type="number"
-                name="filas"
-                placeholder="Cantidad de filas"
-                value={sala.filas}
-                onChange={handleChange}
-            />
+                <input
+                    className="form-input"
+                    type="number"
+                    name="filas"
+                    placeholder="Cantidad de filas"
+                    value={sala.filas}
+                    onChange={handleChange}
+                />
 
-            <input
-                type="number"
-                name="columnas"
-                placeholder="Cantidad de columnas"
-                value={sala.columnas}
-                onChange={handleChange}
-            />
+                <input
+                    className="form-input"
+                    type="number"
+                    name="columnas"
+                    placeholder="Cantidad de columnas"
+                    value={sala.columnas}
+                    onChange={handleChange}
+                />
+            </div>
 
-            <button onClick={guardarSala}>
+            <button className="btn-guardar" onClick={guardarSala}>
                 Guardar
             </button>
 
-            {error && (
-                <p style={{ color: "red" }}>
-                    {error}
-                </p>
-            )}
-
-        </>
+            {error && <p className="form-error">{error}</p>}
+        </div>
     );
 }

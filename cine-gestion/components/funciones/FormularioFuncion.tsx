@@ -12,6 +12,7 @@ import {
     selectFuncion
 } from "@/redux/slices/funcionesSlice";
 
+import './FormularioFuncion.css'
 
 export const funcionInicial: Funcion = {
 
@@ -203,16 +204,16 @@ export default function FormularioFuncion() {
 };
 
     return (
-
-        <>
-
+        <div className="contPrin">
+            
             <h2>
                 Gestión de Funciones
             </h2>
 
 
-
+<div className=" contGrid">
             <input
+                 className="Continput"
 
                 type="text"
 
@@ -229,6 +230,7 @@ export default function FormularioFuncion() {
 
 
             <select
+                className="ContSelect"
 
                 name="peliculaCodigo"
 
@@ -268,6 +270,7 @@ export default function FormularioFuncion() {
 
 
             <select
+            className="ContSelect"
 
                 name="salaId"
 
@@ -307,6 +310,7 @@ export default function FormularioFuncion() {
 
 
             <input
+                className="Continput"
 
                 type="date"
 
@@ -321,6 +325,7 @@ export default function FormularioFuncion() {
 
 
             <input
+               className="Continput"
 
                 type="time"
 
@@ -334,7 +339,7 @@ export default function FormularioFuncion() {
 
 
 
-            <button onClick={guardarFuncion}>
+            <button className="contebtn" onClick={guardarFuncion}>
 
                 Guardar
 
@@ -350,11 +355,8 @@ export default function FormularioFuncion() {
 
                 </p>
             }
-
-
-
-        </>
-
+            </div>
+        </div>
     );
 
 }

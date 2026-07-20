@@ -1,0 +1,149 @@
+
+.tabla-reservas-container{
+    width: 95%;
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(160deg, #1b1b1b 0%, #141414 100%);
+    border-radius: 15px;
+}
+
+.tabla-reservas-container h2{
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 25px;
+    font-size: 32px;
+
+}
+
+.tabla-reservas-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #e50914 #1b1b1b;
+}
+
+.tabla-reservas-wrapper::-webkit-scrollbar{
+    height: 8px;
+}
+
+.tabla-reservas-wrapper::-webkit-scrollbar-track{
+    background: #1b1b1b;
+}
+
+.tabla-reservas-wrapper::-webkit-scrollbar-thumb{
+    background: #e50914;
+    border-radius: 10px;
+}
+
+
+.tabla-reservas{
+    width: 100%;
+    min-width: 900px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-reservas thead{
+    background: linear-gradient(90deg, #e50914, #b0060f);
+}
+
+.tabla-reservas th{
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tabla-reservas th:first-child{
+    border-top-left-radius: 10px;
+}
+
+.tabla-reservas th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.tabla-reservas td{
+    padding: 14px;
+    text-align: center;
+    color: #e8e8e8;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+}
+
+.tabla-reservas tbody tr{
+    background: #262626;
+    transition: all .25s ease;
+}
+
+.tabla-reservas tbody tr:nth-child(even){
+    background: #1f1f1f;
+}
+
+.tabla-reservas tbody tr:hover{
+    background: #3b3b3b;
+    box-shadow: inset 4px 0 0 #e50914;
+}
+
+.tabla-reservas tbody tr:last-child td{
+    border-bottom: none;
+}
+
+.tabla-vacia{
+    padding: 45px 30px !important;
+    color: #888;
+    font-style: italic;
+    font-size: 15px;
+    background: #1b1b1b;
+}
+
+.celda-total{
+    color: #ff4d57;
+    font-weight: 700;
+}
+
+
+.acciones-funcion{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-editar,
+.btn-eliminar{
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .25s ease;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.btn-editar{
+    background: #ffc107;
+    color: #1b1b1b;
+}
+
+.btn-editar:hover{
+    background: #ffca2c;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 10px rgba(255,193,7,.35);
+}
+
+.btn-eliminar{
+    background: #dc3545;
+    color: white;
+}
+
+.btn-eliminar:hover{
+    background: #bb2d3b;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 10px rgba(220,53,69,.35);
+}
