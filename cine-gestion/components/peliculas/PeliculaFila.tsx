@@ -35,8 +35,6 @@ export default function PeliculaFila({ pelicula }: Props) {
 
                             <td>{pelicula.clasificacion}</td>
 
-                            <td>{pelicula.sala}</td>
-
                             <td>{pelicula.precio.toFixed(2)}</td>
 
                             <td>

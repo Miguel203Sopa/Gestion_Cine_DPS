@@ -4,7 +4,6 @@ export interface Pelicula{
     genero:string;
     duracion:number;
     clasificacion:string;
-    sala:string;
     precio:number;
     disponible:boolean;
 

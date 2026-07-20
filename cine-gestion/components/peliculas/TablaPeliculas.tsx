@@ -1,5 +1,5 @@
 "use client";
-import PeliculaFila from "./PeliculaFila";
+import PeliculaFila from "@/components/peliculas/PeliculaFila";
 import { useAppSelector} from "@/redux/hooks";
 
 export default function TablaPeliculas() {
@@ -21,7 +21,6 @@ export default function TablaPeliculas() {
                         <th>Género</th>
                         <th>Duración</th>
                         <th>Clasificación</th>
-                        <th>Sala</th>
                         <th>Precio</th>
                         <th>Disponible</th>
                         <th>Acciones</th>

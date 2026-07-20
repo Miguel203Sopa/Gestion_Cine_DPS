@@ -1,4 +1,5 @@
-import Providers from "./providers";
+"use client";
+import ReduxProvider from "./reduxprovider";
 
 export default function RootLayout({
     children,
@@ -9,9 +10,11 @@ export default function RootLayout({
     return (
         <html lang="es">
             <body>
-                <Providers>
+
+                <ReduxProvider>
                     {children}
-                </Providers>
+                </ReduxProvider>
+
             </body>
         </html>
     );

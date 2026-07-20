@@ -1,11 +1,5 @@
-import FormularioPelicula from "@/components/FormularioPelicula";
-import TablaPeliculas from "@/components/TablaPeliculas";
+import Tabs from "@/components/tabs";
 
 export default function Home() {
-    return (
-        <>
-            <FormularioPelicula />
-            <TablaPeliculas />
-        </>
-    );
+    return <Tabs />;
 }
