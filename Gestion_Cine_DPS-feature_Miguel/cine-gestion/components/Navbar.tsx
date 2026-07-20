@@ -11,9 +11,9 @@ const Navbar = () => {
         <div>
             <div className="navbar">
                 <ul>
-                    <img src="logo"></img>
-                <li><Link href="/page">Adm. Peliculas </Link></li>
-                <li><Link href="Dashboard">Dasdboard</Link></li>
+                <img src="logo"></img>
+                <li><Link href="/page">🎟️Reserva de boleto </Link></li>
+                <li><Link href="Dashboard">📊 Dasdboard</Link></li>
             </ul>
             </div>
         </div>
