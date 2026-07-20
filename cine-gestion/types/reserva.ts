@@ -1,13 +1,15 @@
-export interface Reserva{
+export interface Reserva {
 
-    id:string;
+    id: string;
 
-    funcionId:string;
+    funcionId: string;
 
-    cantidad:number;
+    cantidad: number;
 
-    asientos:string[];
+    asientos: string[];
 
-    total:number;
+    total: number;
+
+    fechaReserva: string;
 
 }

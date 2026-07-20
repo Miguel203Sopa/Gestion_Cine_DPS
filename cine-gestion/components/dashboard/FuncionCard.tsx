@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Funcion } from "@/types/Funcion";
 import { useAppSelector } from "@/redux/hooks";
-
+import ModalReserva from  "@/components/reservas/ModalReserva"
 
 interface Props {
 
@@ -17,6 +18,7 @@ export default function FuncionCard({
 }: Props){
 
 
+    const [mostrarModal, setMostrarModal] = useState(false);
 
     const peliculas =
         useAppSelector(
@@ -99,16 +101,33 @@ export default function FuncionCard({
 
 
 
-            <button>
-
+            <button
+                onClick={() => setMostrarModal(true)}
+            >
                 Comprar boleto
-
             </button>
+
+
+            {
+                mostrarModal && (
+
+                    <ModalReserva
+
+                        funcion={funcion}
+
+                        cerrar={() =>
+                            setMostrarModal(false)
+                        }
+
+                    />
+
+            )}
 
 
 
         </div>
 
+            
     );
 
 }

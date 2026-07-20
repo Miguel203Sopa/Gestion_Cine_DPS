@@ -31,7 +31,26 @@ const reservasSlice = createSlice({
     reducers:{
 
 
-        addReserva:(state, action:PayloadAction<Reserva>)=>{
+        addReserva: (state, action: PayloadAction<Reserva>) => {
+
+            const existe = state.reservas.some(
+
+                reserva =>
+                    reserva.funcionId === action.payload.funcionId &&
+                    reserva.asientos.some(
+                        asiento =>
+                            action.payload.asientos.includes(asiento)
+                    )
+
+            );
+
+            if (existe) {
+
+                console.log("Uno o más asientos ya están reservados.");
+
+                return;
+
+            }
 
             state.reservas.push(action.payload);
 

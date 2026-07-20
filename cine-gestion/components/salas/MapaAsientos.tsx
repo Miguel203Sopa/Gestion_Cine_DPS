@@ -1,35 +1,59 @@
 "use client";
 
-import { useState } from "react";
+
 import { useAppSelector } from "@/redux/hooks";
 import { Funcion } from "@/types/Funcion";
 
 
 interface Props {
 
-    funcion: Funcion;
+     funcion: Funcion;
+
+    asientosSeleccionados: string[];
+
+    setAsientosSeleccionados:
+        React.Dispatch<
+            React.SetStateAction<string[]>
+        >;
 
 }
 
 
 
 export default function MapaAsientos({
-    funcion
+     funcion,
+
+    asientosSeleccionados,
+
+    setAsientosSeleccionados
 }: Props){
 
 
-    const [asientosSeleccionados, setAsientosSeleccionados] =
-        useState<string[]>([]);
+    const reservas =
+    useAppSelector(
+        state => state.reservas.reservas
+    );
 
 
 
-    // Simulación temporal
-    // Después vendrá desde reservasSlice
-    const asientosOcupados = [
-        "A2",
-        "B3"
-    ];
+    
+    const asientosOcupados =
 
+    reservas
+
+        .filter(
+
+            reserva =>
+
+                reserva.funcionId === funcion.id
+
+        )
+
+        .flatMap(
+
+            reserva => reserva.asientos
+
+        );
 
 
     const salas =
