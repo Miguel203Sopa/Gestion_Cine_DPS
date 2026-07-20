@@ -1,6 +1,7 @@
 .navbar{
     display: flex;
     align-items: center;
+    font-family: sans-serif;
     justify-content: space-between;
     background: linear-gradient(90deg, #1b1b1b 0%, #141414 100%);
     padding: 25px 40px;

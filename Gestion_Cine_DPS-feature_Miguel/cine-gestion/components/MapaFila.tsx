@@ -8,6 +8,8 @@ import {
     confirmarReserva,
     cancelarSeleccion,
 } from '../redux/slices/SalaSlice';
+import '../components/CSS/MapaFila.css'
+
 
 export default function MapaAsientos() {
     const dispatch = useDispatch();
@@ -35,31 +37,32 @@ export default function MapaAsientos() {
     };
 
     return (
-        <div>
+        <div className="mapeado">
             <h2>Selecciona tus asientos</h2>
 
-            <div >
-                <div>
-                    <span/>
+            <div className="base">
+                 <div className="contructor">
+                <div className="estado">
+                    <span className="astli-li"/>
                     Libre
                 </div>
-                <div>
-                    <span />
+                <div className="estado">
+                    <span className="astli-el"/>
                     Elegido
                 </div>
-                <div>
-                    <span/>
+                <div className="estado">
+                    <span className="astli-oc"/>
                     Ocupado
                 </div>
             </div>
-
-            {/* Mapa de asientos agrupado por fila */}
-            <div>
+            </div>
+            <div className="grid-asientos">
                 {Object.entries(agruparPorFila(asientos)).map(([fila, asientosFila]) => (
-                    <div key={fila}>
+                    <div key={fila} className="fila">
                         {asientosFila.map((asiento) => (
                             <button
                                 key={asiento.id}
+                                className={`asiento asiento-${asiento.estado}`}
                                 disabled={asiento.estado === "ocupado"}
                                 onClick={() => dispatch(seleccionarAsiento(asiento.id))}>
                                 {asiento.numero}
@@ -68,26 +71,26 @@ export default function MapaAsientos() {
                     </div>
                 ))}
             </div>
-
-            <div>
+            <div className="controlPrin">
+            <div className="controles">
                 <strong>Asientos seleccionados: </strong>
                 {seleccionados.length === 0 ? "Ninguno" : seleccionados.map(a => a.numero).join(", ")}
             </div>
 
-            <div>
+            <div className="controles">
                 <strong>Asientos reservados (confirmados): </strong>
                 {reservados.length === 0 ? "Aún no hay reservas confirmadas" : reservados.join(", ")}
             </div>
-
-            <div>
-                <button
+            </div>
+            <div className="botones">
+                <button className="bottonConfi"
                     disabled={seleccionados.length === 0}
                     onClick={() => dispatch(confirmarReserva())}
                 >
                     Confirmar reserva
                 </button>
 
-                <button
+                <button className="buttonCanc"
                     disabled={seleccionados.length === 0}
                     onClick={() => dispatch(cancelarSeleccion())}
                 >

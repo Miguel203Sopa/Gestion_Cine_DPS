@@ -14,15 +14,21 @@ export default function Estadictica(){
         <>
           <div className="stats-grid">
             <div className="stat-card">
-                <span>🎬</span><h3>Películas</h3><p>{totalpelis}</p>
+                <span>🎬</span><h3>Total de películas</h3><p>{totalpelis}</p>
             </div>
             <div className="stat-card">
-                <span>💰</span><h3>Valor total</h3><p>${datop.toFixed(2)}</p>
+                <span>💰</span><h3>Ingresos generados</h3><p>${datop.toFixed(2)}</p>
             </div>
             <div className="stat-card">
-                <span>✅</span><h3>Disponibles</h3><p>{dispoT}</p>
+                <span>✅</span><h3>Asientos Disponibles</h3><p>{dispoT}</p>
             </div>
-                            <div className="children">
+            <div className="stat-card">
+                <span>❌</span><h3>Asientos Ocupados</h3><p>{dispoT}</p>
+            </div>
+             <div className="stat-card">
+                <span>🎞️</span><h3>Pelicula mas reservada</h3><p>{dispoT}</p>
+            </div>
+                <div className="children">
                     <Link href="/">Regreso</Link>
                 </div>
         </div>
