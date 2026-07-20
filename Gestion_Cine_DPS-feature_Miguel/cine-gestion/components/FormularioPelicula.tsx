@@ -1,13 +1,10 @@
 "use client";
 
-
-
 import { useState, useEffect } from "react";
 import { Pelicula } from "@/types/pelicula";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addPelicula, updatePelicula,selectPelicula } from "@/redux/slices/peliculasSlice";
-
-
+import '../components/CSS/FormularioPelicula.css'
 
 
   export  const peliculaInicial: Pelicula = {
@@ -143,10 +140,11 @@ dispatch(selectPelicula(null));
 
  return (
  <>
+ <div className="formcontrolador">
 
+    <h1>Reguistro de Peliculas</h1>
 
-
-    <input
+     <input className="input"
         type="text"
         name="nombre"
         placeholder="Nombre de la película"
@@ -154,7 +152,7 @@ dispatch(selectPelicula(null));
         onChange={handleChange}
     />
 
-    <input
+    <input className="input"
         type="text"
         name="codigo"
         placeholder="Codigo de la pelicula"
@@ -162,7 +160,7 @@ dispatch(selectPelicula(null));
         onChange={handleChange}
     />
 
-    <select
+    <select className="input"
         name = "genero"
         value={pelicula.genero}
         onChange={handleChange}>
@@ -179,7 +177,7 @@ dispatch(selectPelicula(null));
     </select>
     
 
-    <input
+    <input className="input"
         type="number"
         name="duracion"
         placeholder="tiempo de duracion de la pelicula"
@@ -187,7 +185,7 @@ dispatch(selectPelicula(null));
         onChange={handleChange}
     />
 
-    <select
+    <select className="input"
         name = "clasificacion"
         value={pelicula.clasificacion}
         onChange={handleChange}>
@@ -202,7 +200,7 @@ dispatch(selectPelicula(null));
         
     </select>
 
-    <input
+    <input className="input"
         type="text"
         name="sala"
         placeholder="sala de la pelicula"
@@ -210,7 +208,7 @@ dispatch(selectPelicula(null));
         onChange={handleChange}
     />
 
-    <input
+    <input className="input"
         type="number"
         name="precio"
         placeholder="precio de la pelicula"
@@ -218,7 +216,7 @@ dispatch(selectPelicula(null));
         onChange={handleChange}
     />
 
-    <input
+    <input className="input"
         type="checkbox"
         name="disponible"
         checked={pelicula.disponible}
@@ -236,7 +234,7 @@ dispatch(selectPelicula(null));
     </p>
     )}
 
-
+ </div>
 </>
 
 
