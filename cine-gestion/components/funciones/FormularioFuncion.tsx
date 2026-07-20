@@ -32,6 +32,11 @@ export const funcionInicial: Funcion = {
 export default function FormularioFuncion() {
 
 
+    const funciones =
+    useAppSelector(
+        state => state.funciones.funciones
+    );
+
     const dispatch = useAppDispatch();
 
 
@@ -102,93 +107,100 @@ export default function FormularioFuncion() {
 
 
 
-    const guardarFuncion = () => {
+   const guardarFuncion = () => {
 
+    setError("");
 
-        setError("");
+    if (!funcion.id.trim()) {
 
+        setError("El ID es obligatorio");
+        return;
 
+    }
 
-        if(!funcion.id.trim()){
+    if (!funcion.peliculaCodigo) {
 
-            setError("El ID es obligatorio");
+        setError("Seleccione una película");
+        return;
 
-            return;
+    }
 
-        }
+    if (!funcion.salaId) {
 
+        setError("Seleccione una sala");
+        return;
 
-        if(!funcion.peliculaCodigo){
+    }
 
-            setError("Seleccione una película");
+    if (!funcion.fecha) {
 
-            return;
+        setError("Ingrese una fecha");
+        return;
 
-        }
+    }
 
+    if (!funcion.hora) {
 
-        if(!funcion.salaId){
+        setError("Ingrese una hora");
+        return;
 
-            setError("Seleccione una sala");
+    }
 
-            return;
+    const existeId = funciones.some(
 
-        }
+        f =>
 
+            f.id === funcion.id &&
 
-        if(!funcion.fecha){
+            f.id !== funcionSeleccionada?.id
 
-            setError("Ingrese una fecha");
+    );
 
-            return;
+    if (existeId) {
 
-        }
+        setError("Ya existe una función con ese ID.");
+        return;
 
+    }
 
-        if(!funcion.hora){
+    const existeHorario = funciones.some(
 
-            setError("Ingrese una hora");
+        f =>
 
-            return;
+            f.id !== funcionSeleccionada?.id &&
 
-        }
+            f.salaId === funcion.salaId &&
 
+            f.fecha === funcion.fecha &&
 
+            f.hora === funcion.hora
 
+    );
 
-        if(funcionSeleccionada){
+    if (existeHorario) {
 
-
-            dispatch(
-                updateFuncion(funcion)
-            );
-
-
-        }else{
-
-
-            dispatch(
-                addFuncion(funcion)
-            );
-
-
-        }
-
-
-
-        setFuncion(funcionInicial);
-
-
-        dispatch(
-            selectFuncion(null)
+        setError(
+            "Ya existe una función en esa sala para la misma fecha y hora."
         );
 
+        return;
 
-    };
+    }
 
+    if (funcionSeleccionada) {
 
+        dispatch(updateFuncion(funcion));
 
+    } else {
 
+        dispatch(addFuncion(funcion));
+
+    }
+
+    setFuncion(funcionInicial);
+    dispatch(selectFuncion(null));
+
+};
 
     return (
 

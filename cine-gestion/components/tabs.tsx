@@ -11,8 +11,9 @@ import FormularioSala from "./salas/FormularioSala";
 import TablaSalas from "@/components/salas/TablaSalas";
 import FormularioFuncion from "./funciones/FormularioFuncion";
 import TablaFunciones from "./funciones/TablaFunciones";
-import MapaAsientos from "@/components/salas/MapaAsientos";
-import Cartelera from "@/components/dashboard/Cartelera";
+import Dashboard from "@/components/dashboard/Dashboard";
+import FormularioReserva from "@/components/reservas/FormularioReserva";
+import TablaReservas from "@/components/reservas/TablaReservas";
 
 export default function Tabs() {
 
@@ -43,6 +44,8 @@ export default function Tabs() {
             {pantalla === "reservas" && (
                 <>
                     <h2>Reservas</h2>
+                    <FormularioReserva/>
+                    <TablaReservas />
                 </>
             )}
 
@@ -57,7 +60,7 @@ export default function Tabs() {
             {pantalla === "dashboard" && (
                 <>
                     <h2>Dashboard</h2>
-                     <Cartelera />
+                     <Dashboard />
                 </>
             )}
 
