@@ -2,4 +2,5 @@ export type Pantalla =
     | "peliculas"
     | "salas"
     | "reservas"
-    | "dashboard";
+    | "dashboard"
+    | "funciones";

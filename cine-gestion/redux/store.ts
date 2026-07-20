@@ -11,6 +11,7 @@ import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 import peliculasReducer from "@/redux/slices/peliculasSlice";
 import salasReducer from "@/redux/slices/salasSlice";
 import reservasReducer from "@/redux/slices/reservasSlice";
+import funcionesReducer from "@/redux/slices/funcionesSlice";
 
 // Storage vacío para cuando Next.js está en servidor
 const createNoopStorage = () => {
@@ -58,7 +59,9 @@ const rootReducer = combineReducers({
 
     salas: salasReducer,
 
-    reservas: reservasReducer
+    reservas: reservasReducer,
+
+    funciones: funcionesReducer
 
 });
 

@@ -47,6 +47,12 @@ const Navbar =  ({ pantalla, setPantalla }: NavbarProps) => {
                         Reservas
                     </li>
 
+                    <li className={pantalla === "funciones" ? "activo" : ""}
+                        onClick={() => setPantalla("funciones")}>
+                        Funciones
+                    </li>
+
+
                     <li 
                         className={pantalla === "dashboard" ? "activo" : ""}
                         onClick={() => setPantalla("dashboard")}>
@@ -63,12 +69,6 @@ const Navbar =  ({ pantalla, setPantalla }: NavbarProps) => {
                     <hr></hr>
                     <p>Las mejores peliculas en un solo lugar</p>
                     
-                    <button
-                        className="AgrePeli"
-                        onClick={() => setPantalla("reservas")}
-                    >
-                        Hacer reserva
-                    </button>
                 </section>
             </div>
         </div>

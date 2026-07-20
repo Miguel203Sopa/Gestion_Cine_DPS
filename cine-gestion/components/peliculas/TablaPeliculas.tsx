@@ -21,6 +21,7 @@ export default function TablaPeliculas() {
                         <th>Género</th>
                         <th>Duración</th>
                         <th>Clasificación</th>
+                        <th>Sala</th>
                         <th>Precio</th>
                         <th>Disponible</th>
                         <th>Acciones</th>

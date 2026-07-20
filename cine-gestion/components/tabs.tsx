@@ -9,8 +9,10 @@ import FormularioPelicula from "@/components/peliculas/FormularioPelicula";
 import TablaPeliculas from "@/components/peliculas/TablaPeliculas";
 import FormularioSala from "./salas/FormularioSala";
 import TablaSalas from "@/components/salas/TablaSalas";
-
-
+import FormularioFuncion from "./funciones/FormularioFuncion";
+import TablaFunciones from "./funciones/TablaFunciones";
+import MapaAsientos from "@/components/salas/MapaAsientos";
+import Cartelera from "@/components/dashboard/Cartelera";
 
 export default function Tabs() {
 
@@ -44,9 +46,18 @@ export default function Tabs() {
                 </>
             )}
 
+            {pantalla === "funciones" && (
+                <>
+                    <FormularioFuncion/>
+                    <TablaFunciones />
+                  
+                </>
+            )}
+
             {pantalla === "dashboard" && (
                 <>
                     <h2>Dashboard</h2>
+                     <Cartelera />
                 </>
             )}
 

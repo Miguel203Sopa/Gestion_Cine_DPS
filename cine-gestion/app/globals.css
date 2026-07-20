@@ -47,3 +47,58 @@ a {
     color-scheme: dark;
   }
 }
+
+.mapa-asientos {
+
+    display:grid;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+
+.asiento {
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+/* Disponible */
+.asiento.libre {
+
+    background-color:green;
+
+    color:white;
+
+}
+
+
+/* Elegido por usuario */
+.asiento.seleccionado {
+
+    background-color:blue;
+
+    color:white;
+
+}
+
+
+/* Ya vendido */
+.asiento.ocupado {
+
+    background-color:red;
+
+    color:white;
+
+    cursor:not-allowed;
+
+}
