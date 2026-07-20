@@ -27,7 +27,8 @@ const peliculasSlice = createSlice({
             
 
             const existe = state.peliculas.some(
-                p => p.codigo === action.payload.codigo
+                p => p.codigo === action.payload.codigo &&
+                p.codigo !== state.peliculaSeleccionada?.codigo
             );
 
             if (existe) {

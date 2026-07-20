@@ -16,7 +16,6 @@ import { addPelicula, updatePelicula,selectPelicula } from "@/redux/slices/pelic
     genero: "",
     duracion: 0,
     clasificacion: "",
-    sala: "",
     precio: 0,
     disponible: true,
 };
@@ -109,11 +108,6 @@ const guardarPelicula = ()=>{
         return;
     }
 
-    if (!pelicula.sala.trim()) {
-        setError("la sala de la pelicula es obligatoria.");
-        return;
-    }
-
     if (pelicula.precio <= 0) {
         setError("Escriba un precio valido.");
         return;
@@ -201,14 +195,6 @@ dispatch(selectPelicula(null));
     
         
     </select>
-
-    <input
-        type="text"
-        name="sala"
-        placeholder="sala de la pelicula"
-        value={pelicula.sala}
-        onChange={handleChange}
-    />
 
     <input
         type="number"
